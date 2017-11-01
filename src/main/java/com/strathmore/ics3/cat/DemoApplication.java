@@ -1,5 +1,9 @@
 package com.strathmore.ics3.cat;
 
+import com.strathmore.ics3.cat.client.CountryClient;
+import localhost._8080.webservice.Country;
+import localhost._8080.webservice.GetCountryResponse;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +22,21 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com.strathmore.ics3.cat"))
-				.paths(PathSelectors.any()).build();
+	CommandLineRunner lookup(CountryClient countryClient) {
+		return args -> {
+			String name = "Spain";
+
+			if (args.length > 0) {
+				name = args[0];
+			}
+			countries.wsdl.GetCountryResponse response = countryClient.getCountry(name);
+			countries.wsdl.Country country = response.getCountry();
+
+			String result = country.getName() + "\n" + country.getCapital()  + "\n" +
+					country.getCurrency() + "\n" + country.getPopulation();
+
+			System.err.println(result);
+		};
 	}
+
 }
