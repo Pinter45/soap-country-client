@@ -1,18 +1,16 @@
-package com.strathmore.ics3.cat.client;
+package com.ibandla.soap.client;
+
+import countries.wsdl.GetCountryRequest;
+import countries.wsdl.GetCountryResponse;
+import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 /**
  * Created by clive on 01/11/17.
  */
 
-
-        import org.slf4j.Logger;
-        import org.slf4j.LoggerFactory;
-
-        import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-        import org.springframework.ws.soap.client.core.SoapActionCallback;
-
-        import  countries.wsdl.GetCountryRequest;
-        import  countries.wsdl.GetCountryResponse;
 
 public class CountryClient extends WebServiceGatewaySupport {
 

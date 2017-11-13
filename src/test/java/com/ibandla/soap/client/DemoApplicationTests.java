@@ -1,4 +1,4 @@
-package com.strathmore.ics3.cat;
+package com.ibandla.soap.client;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

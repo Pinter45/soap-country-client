@@ -1,14 +1,13 @@
-package com.strathmore.ics3.cat.client;
+package com.ibandla.soap.client;
+
+import com.ibandla.soap.client.CountryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 /**
  * Created by clive on 01/11/17.
  */
-
-
-
-import org.springframework.context.annotation.Bean;
-        import org.springframework.context.annotation.Configuration;
-        import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
 public class CountryConfiguration {
